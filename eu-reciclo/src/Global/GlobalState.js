@@ -3,9 +3,18 @@ import GlobalStateContext from './GlobalStateContext'
 
 const GlobalState = (props) => {
 
+    const [sidebarOpen, setSidebarOpen] = useState(false)
 
-    const states = {}
-    const setters = {}
+    const openSideBar = () => {
+        setSidebarOpen(true)
+    }
+
+    const closeSideBar = () => {
+        setSidebarOpen(false)
+    }
+
+    const states = {sidebarOpen}
+    const setters = {setSidebarOpen, openSideBar, closeSideBar}
 
     return (
         <GlobalStateContext.Provider value={{states, setters}}>
