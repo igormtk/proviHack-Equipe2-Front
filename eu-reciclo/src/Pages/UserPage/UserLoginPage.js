@@ -1,8 +1,10 @@
 import React from "react"
 import { Button } from "@mui/material"
 import UserLoginForm from "./UserLoginForm"
+import { useNavigate } from "react-router-dom"
 
 const UserLoginPage = () => {
+    let navigate = useNavigate()
 
     return (
         <div>
@@ -17,6 +19,7 @@ const UserLoginPage = () => {
             fullWidth 
             variant="contained" 
             type="submit" 
+            onClick={() => navigate("/signup/user")}
             color="success">
             <p>CADASTRAR</p>
         </Button>

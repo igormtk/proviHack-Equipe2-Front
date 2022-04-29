@@ -1,8 +1,10 @@
 import React from "react"
 import { Button } from "@mui/material"
 import ReceiverLoginForm from "./ReceiverLoginForm"
+import { useNavigate } from "react-router-dom"
 
 const ReceiverLoginPage = () => { 
+    let navigate = useNavigate()
 
     return (
         <div>
@@ -17,6 +19,7 @@ const ReceiverLoginPage = () => {
             fullWidth 
             variant="contained" 
             type="submit" 
+            onClick={() => navigate("/signup/receiver")}
             color="primary">
             <p>CADASTRAR</p>
         </Button>
