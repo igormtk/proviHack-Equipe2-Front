@@ -1,92 +1,80 @@
 import React, { useContext } from "react"
 import GlobalStateContext from "../../Global/GlobalStateContext"
+import { SidebarContainer, SideBarImage, SidebarTitle, Logo, Icon, MenuTitle, SideLink, SideLinkActive, SideLinkMenu, Icon2 } from "./SidebarStyle"
+import reciclar from "../../Assets/Icons/reciclar.png"
+import ecoHouse from "../../Assets/Icons/ecoHouse.png"
+import cart from "../../Assets/Icons/cart.png"
+import notification from "../../Assets/Icons/notification.png"
+import wallet from "../../Assets/Icons/wallet.png"
+import trophy from "../../Assets/Icons/trophy.png"
 
 const Sidebar = () => {
 
     const { states, setters } = useContext(GlobalStateContext)
 
     return (
-        <div className={states.sideBarOpen ? "sidebar-responsive" : ""} id="sidebar">
+        <SidebarContainer className={states.sideBarOpen ? "sidebar-responsive" : ""} id="sidebar">
 
-            <div className='sidebar_title'>
+            <SidebarTitle className='sidebar_title'>
 
-                <div className="sidebar_img">
+                <SideBarImage className="sidebar_img">
 
-                    <p>Colocar imagem</p>
-                    <p>Eu reciclo</p>
+                    <Logo src={reciclar} alt="logo"/>
 
-                </div>
+                </SideBarImage>
 
-                <i 
+                <a
                 onClick={()=>setters.closeSideBar()}
                 className = "fa fa-times"
                 id = "sidebarIcon"
                 aria-hidden="true"
-                ></i>
+                >FECHAR</a>
 
-            </div>
+            </SidebarTitle>
 
             <div className="sidebar_menu">
 
-                <div className="sidebar_link active_menu_link">
+                <SideLinkActive className="sidebar_link active_menu_link">
 
+                    <SideLinkMenu href="#"></SideLinkMenu>
 
-                    <i className = "fa fa-times"></i>
+                    <MenuTitle>MENU</MenuTitle>
 
-                    <a href="#">HOME(COLOCAR ICONE)</a>
+                    <SideLink className="sidebar_link">
 
-                    <h2>TITULO</h2>
+                        <Icon href="#"><Icon2 src={ecoHouse} alt="home"/></Icon>   
 
-                    <div className="sidebar_link">
+                    </SideLink>
 
-                    <i className = "fa fa-times2"></i>
+                    <SideLink className="sidebar_link">
 
-                    <a href="#">ICONE1</a>   
+                        <Icon href="#"><Icon2 src={trophy} alt="home"/></Icon>   
 
-                    </div>
+                    </SideLink>
 
+                    <SideLink className="sidebar_link">
 
-                    <div className="sidebar_link">
+                        <Icon href="#"><Icon2 src={cart} alt="home"/></Icon> 
 
-                    <i className = "fa fa-times3"></i>
+                    </SideLink>
 
-                    <a href="#">ICONE2</a>   
+                    <SideLink className="sidebar_link">
 
-                    </div>
+                        <Icon href="#"><Icon2 src={wallet} alt="home"/></Icon> 
 
+                    </SideLink>
 
-                    <div className="sidebar_link">
+                    <SideLink className="sidebar_link">
 
-                    <i className = "fa fa-times4"></i>
+                        <Icon href="#"><Icon2 src={notification} alt="home"/></Icon>   
 
-                    <a href="#">ICONE3</a>    
+                    </SideLink>
 
-                    </div>
-
-                    <div className="sidebar_link">
-
-                    <i className = "fa fa-times5"></i>
-
-                    <a href="#">ICONE4</a>   
-
-                    </div>
-
-                    <div className="sidebar_link">
-
-                    <i className = "fa fa-times6"></i>
-
-                    <a href="#">ICONE5</a>     
-
-                    </div>
-
-
-
-
-                </div>
+                </SideLinkActive>
 
             </div>
 
-        </div>
+        </SidebarContainer>
     )
 }
 
