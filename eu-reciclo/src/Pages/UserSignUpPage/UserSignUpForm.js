@@ -117,7 +117,7 @@ const UserSignUpForm = () => {
             fullWidth 
             variant="contained" 
             type="submit" 
-            color="primary">
+            color="success">
             <p>CADASTRAR</p>
         </Button>
 
