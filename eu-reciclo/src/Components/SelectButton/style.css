@@ -14,6 +14,7 @@
 
 .card_style:hover {
   transform: scale(1.06);
+  transition: ease all 0.5s;
 }
 
 .green {
