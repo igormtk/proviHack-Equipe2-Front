@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../../Components/Navbar/Navbar";
 import SelectButton from "../../Components/SelectButton";
 import ping from "../../Assets/Icons/ping.png";
 import calendar from "../../Assets/Icons/calendar.png";
@@ -18,6 +17,8 @@ import {
 import BaseModal from "../../Components/Modal";
 import { toast, Toaster } from "react-hot-toast";
 import { CustomToast } from "../../Helpers/Toast";
+import Header from "../../Components/Header/Header";
+import { missingFieldsFunction } from "../../Helpers/HelperFunctions";
 
 const RequestCollection = () => {
   const [locationModal, setLocationModal] = useState(false);
@@ -53,28 +54,7 @@ const RequestCollection = () => {
 
   const handleForm = (e) => {
     e.preventDefault();
-    let missing_fields = [];
-
-    Object.entries(info).forEach(([key, value]) => {
-      if (!value || (key === "products" && !value[0])) {
-        const expr = key;
-        switch (expr) {
-          case "address":
-            missing_fields.push("1 - Solicitar Coleta: Local");
-            break;
-          case "dateTime":
-            missing_fields.push("1 - Solicitar Coleta: Data e Hora");
-            break;
-          case "products":
-            missing_fields.push(
-              "2 - Qual Produto Deseja Reciclar? Escolha pelo menos 1 produto"
-            );
-            break;
-          default:
-            missing_fields.push("3 - Quantidade de Sacas");
-        }
-      }
-    });
+    let missing_fields = missingFieldsFunction(info);
 
     if (!!missing_fields[0]) {
       CustomToast(missing_fields);
@@ -87,74 +67,84 @@ const RequestCollection = () => {
 
   return (
     <Container>
-      <Navbar />
+      <Header />
       <PageBox>
-        <QuestionBox>
-          <h2>1 - Solicitar Coleta</h2>
-          <div className="cards__box">
-            <SelectButton
-              IconPicture={ping}
-              customColor="green"
-              text="Local"
-              onClick={() => setLocationModal(true)}
-            />
-            <SelectButton
-              IconPicture={calendar}
-              customColor="blue"
-              text="Data e Hora"
-              onClick={() => setDateModal(true)}
-            />
-          </div>
-        </QuestionBox>
-        <QuestionBox>
-          <h2>2 - Qual Produto deseja reciclar?</h2>
-          <div className="cards__box">
-            <SelectButton
-              IconPicture={glass}
-              customColor="green"
-              text="Vidro"
-              name="vidro"
-              onClick={(e) => handleProducts(e)}
-            />
-            <SelectButton
-              IconPicture={paper}
-              customColor="blue"
-              text="Papel"
-              name="papel"
-              onClick={(e) => handleProducts(e)}
-            />
-            <SelectButton
-              IconPicture={game}
-              customColor="pink"
-              text="Eletrônicos"
-              name="eletrônicos"
-              onClick={(e) => handleProducts(e)}
-            />
-            <SelectButton
-              IconPicture={house}
-              customColor="green"
-              text="Entulho"
-              name="entulho"
-              onClick={(e) => handleProducts(e)}
-            />
-          </div>
-        </QuestionBox>
-        <QuestionBox>
-          <h2>3 - Quantidade de Sacas</h2>
-          <div className="cards__box box3">
-            <input
-              className="input_quantity"
-              value={info.sacas}
-              onChange={(e) => setInfo({ ...info, sacas: e.target.value })}
-            />
-            <SelectButton
-              IconPicture={send}
-              customColor="pink"
-              text="Enviar"
-              onClick={handleForm}
-            />
-          </div>
-        </QuestionBox>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+          }}
+        >
+          <QuestionBox>
+            <h2>1 - Solicitar Coleta</h2>
+            <div className="cards__box">
+              <SelectButton
+                IconPicture={ping}
+                customColor="green"
+                text="Local"
+                onClick={() => setLocationModal(true)}
+              />
+              <SelectButton
+                IconPicture={calendar}
+                customColor="blue"
+                text="Data e Hora"
+                onClick={() => setDateModal(true)}
+              />
+            </div>
+          </QuestionBox>
+          <QuestionBox>
+            <h2>2 - Qual Produto deseja reciclar?</h2>
+            <div className="cards__box">
+              <SelectButton
+                IconPicture={glass}
+                customColor="green"
+                text="Vidro"
+                name="vidro"
+                onClick={(e) => handleProducts(e)}
+              />
+              <SelectButton
+                IconPicture={paper}
+                customColor="blue"
+                text="Papel"
+                name="papel"
+                onClick={(e) => handleProducts(e)}
+              />
+              <SelectButton
+                IconPicture={game}
+                customColor="pink"
+                text="Eletrônicos"
+                name="eletrônicos"
+                onClick={(e) => handleProducts(e)}
+              />
+              <SelectButton
+                IconPicture={house}
+                customColor="green"
+                text="Entulho"
+                name="entulho"
+                onClick={(e) => handleProducts(e)}
+              />
+            </div>
+          </QuestionBox>
+        </div>
+        <div>
+          <QuestionBox>
+            <h2>3 - Quantidade de Sacas</h2>
+            <div className="cards__box box3">
+              <input
+                className="input_quantity"
+                value={info.sacas}
+                onChange={(e) => setInfo({ ...info, sacas: e.target.value })}
+              />
+              <SelectButton
+                IconPicture={send}
+                customColor="pink"
+                text="Enviar"
+                onClick={handleForm}
+              />
+            </div>
+          </QuestionBox>
+        </div>
       </PageBox>
 
       {locationModal && (

@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   padding: 5px;
-  height: 142px;
-  width: 130px;
+  height: 120px;
+  width: 120px;
   justify-content: space-evenly;
   margin: 10px;
   border: 3px solid transparent;
@@ -49,5 +49,5 @@ p {
 
 img {
   height: auto;
-  width: 60px;
+  width: 50px;
 }

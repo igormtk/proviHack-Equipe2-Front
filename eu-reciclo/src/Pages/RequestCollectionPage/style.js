@@ -7,18 +7,16 @@ export const PageBox = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin-top: 10px;
 
-  @media (min-width: 768px) and (min-height: 780px) {
-    margin-top: 10px;
+  @media (min-width: 600px) and (min-height: 600px) {
     align-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    height: 90vh;
-    justify-content: flex-start;
     margin: 0 auto;
+    justify-content: space-evenly;
     max-width: 900px;
   }
 
@@ -28,14 +26,13 @@ export const PageBox = styled.div`
   }
 `;
 export const QuestionBox = styled.div`
-  margin: 20px 0;
-  max-width: 400px;
-  width: fit-content;
+  width: 400px;
 
   .cards__box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    align-items: flex-start;
   }
 
   .box3 {
@@ -45,8 +42,8 @@ export const QuestionBox = styled.div`
 
   .input_quantity {
     border: none;
-    width: 320px;
-    height: 260px;
+    width: 220px;
+    height: 200px;
     background: #f4f2ff;
     box-shadow: 0px 71px 134px rgba(94, 84, 152, 0.1),
       0px 35.9437px 58.4156px rgba(94, 84, 152, 0.0675),
