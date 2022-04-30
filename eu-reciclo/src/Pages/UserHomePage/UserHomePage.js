@@ -1,51 +1,27 @@
 import React from "react"
 import Header from "../../Components/Header/Header"
 import MaterialCard from "../../Components/MaterialCards/MaterialCards";
-import association from "../../Assets/iconsCard/association.png"
-import brick from "../../Assets/iconsCard/brick.png"
-import eletronic from "../../Assets/iconsCard/eletronic.png"
-import glass from "../../Assets/iconsCard/glass.png"
-import paper from "../../Assets/iconsCard/paper.png"
+import house from "../../Assets/Icons/house.png"
+import union from "../../Assets/Icons/union.png"
+import game from "../../Assets/Icons/game.png"
+import glass from "../../Assets/Icons/glass.png"
+import paper from "../../Assets/Icons/paper.png"
 import { Chart } from "react-google-charts";
+import MapLeaflet from "../../Components/Map/Map";
+import { CardContainer, Title, InformationContainer, ChartContainer, MapContainer, ButtonContainer, ButtonContainer2 } from "./UserHomePageStyle"
+import UserChart from "../../Components/Chart/Chart"
+import { Button } from "@mui/material"
 
 const UserHomePage = () => { 
-    const data = [
-        [
-          "Day",
-          "Sacos de lixo recolhidos",
-        ],
-        [1, 1],
-        [2, 2],
-        [3, 1],
-        [4, 0],
-        [5, 5],
-        [6, 2],
-        [7, 10],
-        [8, 1],
-        [9, 0],
-        [10, 3],
-        [11, 4],
-        [12, 8],
-        [13, 2],
-        [14, 5],
-      ];
-      
-    const options = {
-        chart: {
-          title: "Quantidade de sacos recolhidos por dia",
-          subtitle: "em unidade",
-        },
-    };
-      
-
+    
     return (
         <div>
 
         <Header/>
         
-        <h1>Porque é importante reciclar?</h1>
+        <Title>Porque é importante reciclar?</Title>
 
-            <div>
+            <CardContainer>
                 
                 <MaterialCard
                     link = "https://www.psdovidro.com.br/descubra-tudo-sobre-a-reciclagem-de-vidro/"
@@ -61,31 +37,69 @@ const UserHomePage = () => {
 
                 <MaterialCard
                     link = "https://www.ecycle.com.br/reciclagem-de-eletronicos/"
-                    icon = {eletronic}
+                    icon = {game}
                     name = "ELETRÔNICOS"
                 />
 
                 <MaterialCard
                     link = "https://www.vgresiduos.com.br/blog/o-que-fazer-com-os-entulhos-gerados-na-construcao-civil/#:~:text=Importância%20da%20reciclagem%20e%20reaproveitamento,a%20produção%20do%20lixo%20urbano."
-                    icon = {brick}
+                    icon = {union}
                     name = "ENTULHO"
                 />
 
                 <MaterialCard
                     link = "http://www.codeca.com.br/servicos_coletas_associacoes_de_reciclagem.php"
-                    icon = {association}
+                    icon = {house}
                     name = "ASSOCIAÇÕES"
                 />
 
-            </div>
+            </CardContainer>
 
-            <Chart
-                chartType="Line"
-                width="70%"
-                height="400px"
-                data={data}
-                options={options}
-            />
+            <InformationContainer>
+
+                <ChartContainer>
+                    {UserChart()}
+                </ChartContainer>
+
+                <MapContainer>
+
+                    <h2>CONFIRA OS POSTOS DE COLETA!</h2>
+
+                    {MapLeaflet()}
+
+                    <ButtonContainer>
+
+                        <ButtonContainer2>
+
+                            <Button 
+                                fullWidth 
+                                variant="outlined"  
+                                type="submit" 
+                                color="success"
+                                >
+                                <p>SOLICITAR COLETA</p>
+                            </Button>
+
+                        </ButtonContainer2>
+
+                        <ButtonContainer2>
+
+                            <Button 
+                                fullWidth 
+                                variant="outlined" 
+                                type="submit" 
+                                color="primary"
+                                >
+                                <p>BUSCAR ASSOCIAÇÃO</p>
+                            </Button>
+
+                        </ButtonContainer2>
+
+                    </ButtonContainer>
+
+                </MapContainer>
+
+            </InformationContainer>
 
         </div>
     );
