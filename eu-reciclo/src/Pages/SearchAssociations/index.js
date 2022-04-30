@@ -1,21 +1,22 @@
 import React from "react";
-import { HeaderContainer } from "../../Components/Header/HeaderStyle";
 import {
   BlueStyledButton,
   ButtonBox,
   Container,
   PageContainer,
   StyledButton,
+  MapContainer
 } from "./style";
-import mapImage from "../../Assets/Img/map.png";
 import { useNavigate } from "react-router-dom";
+import MapLeaflet from "../../Components/Map/Map";
+import Header from "../../Components/Header/Header";
 
 const SearchAssociations = () => {
   const navigate = useNavigate();
 
   return (
     <PageContainer>
-      <HeaderContainer />
+      <Header/>
       <Container>
         <ButtonBox>
           <StyledButton onClick={() => navigate("/user/request")}>
@@ -27,7 +28,9 @@ const SearchAssociations = () => {
             Buscar Associações
           </BlueStyledButton>
         </ButtonBox>
-        <img src={mapImage} alt="exemplo do map de Vitória - ES" />
+        <MapContainer>
+          {MapLeaflet()}
+        </MapContainer>
       </Container>
     </PageContainer>
   );

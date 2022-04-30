@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const InformationContainer = styled.div`
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,3 +61,16 @@ export const Title = styled.div`
     font-size: 50px;
     margin: 20px;
 `
+
+  border: 1px solid black;
+`;
+
+export const MapContainer = styled.div`
+  border: 1px solid black;
+`;
+
+export const ChartContainer = styled.div`
+  border: 1px solid black;
+  /* width: ; */
+`;
+
