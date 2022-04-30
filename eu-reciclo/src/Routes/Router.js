@@ -30,7 +30,7 @@ const RouterComponent = () => {
 
                 <Route path="/home/receiver" element={<ReceiverHomePage/>}/>
 
-                <Route path="/home/user/request" element={<RequestCollection/>}/>
+                <Route path="/user/request" element={<RequestCollection/>}/>
 
                 <Route path="*" element={<ErrorPage/>}/>
             
