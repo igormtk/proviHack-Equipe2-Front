@@ -9,6 +9,8 @@ import UserHomePage from "../Pages/UserHomePage/UserHomePage"
 import ReceiverHomePage from "../Pages/ReceiverHomePage/ReceiverHomePage"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import RequestCollection from "../Pages/RequestCollectionPage"
+import SearchAssociations from "../Pages/SearchAssociations"
+
 
 const RouterComponent = () => {
     return(
@@ -31,6 +33,8 @@ const RouterComponent = () => {
                 <Route path="/home/receiver" element={<ReceiverHomePage/>}/>
 
                 <Route path="/user/request" element={<RequestCollection/>}/>
+                  
+                <Route path="/user/searchAssociations" element={<SearchAssociations/>}/>
 
                 <Route path="*" element={<ErrorPage/>}/>
             
