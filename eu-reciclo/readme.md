@@ -5,3 +5,5 @@
 <a href="https://www.flaticon.com/br/icones-gratis/ui" title="ui ícones">Ui ícones criados por Anggara - Flaticon</a>
 
 <a href="https://www.flaticon.com/br/icones-gratis/lixeira-de-reciclagem" title="lixeira de reciclagem ícones">Lixeira de reciclagem ícones criados por Freepik - Flaticon</a>
+
+<a target="_blank" href="https://icons8.com/icon/103894/sinal-de-reciclagem">Sinal de Reciclagem</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

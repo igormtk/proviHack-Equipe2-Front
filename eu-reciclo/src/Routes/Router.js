@@ -1,3 +1,4 @@
+import MapLeaflet from '../Components/Map/Map';
 import React from "react"
 import InitialPage from "../Pages/InitialPage/InitialPage"
 import UserLoginPage from "../Pages/UserLoginPage/UserLoginPage"
@@ -11,38 +12,34 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import RequestCollection from "../Pages/RequestCollectionPage"
 import SearchAssociations from "../Pages/SearchAssociations"
 
-
 const RouterComponent = () => {
-    return(
-        <Router>
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<InitialPage />} />
 
-            <Routes>
+        <Route path="/login/user" element={<UserLoginPage />} />
 
-                <Route path="/" element={<InitialPage/>}/>
+        <Route path="/signup/user" element={<UserSignUpPage />} />
 
-                <Route path="/login/user" element={<UserLoginPage/>}/>
+        <Route path="/home/user" element={<UserHomePage />} />
 
-                <Route path="/signup/user" element={<UserSignUpPage/>}/>
+        <Route path="/login/receiver" element={<ReceiverLoginPage />} />
 
-                <Route path="/home/user" element={<UserHomePage/>}/>
+        <Route path="/signup/receiver" element={<ReceiverSignUpPage />} />
 
-                <Route path="/login/receiver" element={<ReceiverLoginPage/>}/>
+        <Route path="/home/receiver" element={<ReceiverHomePage />} />
 
-                <Route path="/signup/receiver" element={<ReceiverSignUpPage/>}/>
-
-                <Route path="/home/receiver" element={<ReceiverHomePage/>}/>
-
-                <Route path="/user/request" element={<RequestCollection/>}/>
+        <Route path="/map" element={<MapLeaflet />} />
+          
+        <Route path="/user/request" element={<RequestCollection/>}/>
                   
-                <Route path="/user/searchAssociations" element={<SearchAssociations/>}/>
+        <Route path="/user/searchAssociations" element={<SearchAssociations/>}/>
 
-                <Route path="*" element={<ErrorPage/>}/>
-            
-            </Routes>
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
+  );
+};
 
-        </Router>
-    
-    )
-}
-
-export default RouterComponent
+export default RouterComponent;
