@@ -14,6 +14,20 @@ export const CompanyProvider = ({ children }) => {
       .catch((err) => console.log(err));
   }
 
+  function retrieveCompanies() {
+    api
+      .get('/company')
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }
+
+  function retrieveCompany(id) {
+    api
+      .get(`/company/${id}`)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }
+
   function updateCompany(data) {
     api
       .put('/company', data, {
@@ -38,7 +52,13 @@ export const CompanyProvider = ({ children }) => {
 
   return (
     <CompanyContext.Provider
-      value={{ registerCompany, updateCompany, deleteCompany }}
+      value={{
+        registerCompany,
+        updateCompany,
+        deleteCompany,
+        retrieveCompanies,
+        retrieveCompany,
+      }}
     >
       {children}
     </CompanyContext.Provider>

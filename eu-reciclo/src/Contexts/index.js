@@ -1,13 +1,16 @@
 import { LoginProvider } from './loginContext';
 import { UserProvider } from './userContext';
 import { CompanyProvider } from './companyContext';
+import { ResiduesProvider } from './residuesContext';
 
 function Providers({ children }) {
   return (
     <LoginProvider>
-      <CompanyProvider>
-        <UserProvider>{children}</UserProvider>
-      </CompanyProvider>
+      <ResiduesProvider>
+        <CompanyProvider>
+          <UserProvider>{children}</UserProvider>
+        </CompanyProvider>
+      </ResiduesProvider>
     </LoginProvider>
   );
 }
