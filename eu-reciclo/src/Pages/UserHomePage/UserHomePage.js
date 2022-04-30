@@ -7,37 +7,12 @@ import eletronic from "../../Assets/iconsCard/eletronic.png"
 import glass from "../../Assets/iconsCard/glass.png"
 import paper from "../../Assets/iconsCard/paper.png"
 import { Chart } from "react-google-charts";
+import MapLeaflet from "../../Components/Map/Map";
+import { CardContainer, InformationContainer, ChartContainer, MapContainer } from "./UserHomePageStyle"
+import UserChart from "../../Components/Chart/Chart"
 
 const UserHomePage = () => { 
-    const data = [
-        [
-          "Day",
-          "Sacos de lixo recolhidos",
-        ],
-        [1, 1],
-        [2, 2],
-        [3, 1],
-        [4, 0],
-        [5, 5],
-        [6, 2],
-        [7, 10],
-        [8, 1],
-        [9, 0],
-        [10, 3],
-        [11, 4],
-        [12, 8],
-        [13, 2],
-        [14, 5],
-      ];
-      
-    const options = {
-        chart: {
-          title: "Quantidade de sacos recolhidos por dia",
-          subtitle: "em unidade",
-        },
-    };
-      
-
+    
     return (
         <div>
 
@@ -45,7 +20,7 @@ const UserHomePage = () => {
         
         <h1>Porque é importante reciclar?</h1>
 
-            <div>
+            <CardContainer>
                 
                 <MaterialCard
                     link = "https://www.psdovidro.com.br/descubra-tudo-sobre-a-reciclagem-de-vidro/"
@@ -77,15 +52,19 @@ const UserHomePage = () => {
                     name = "ASSOCIAÇÕES"
                 />
 
-            </div>
+            </CardContainer>
 
-            <Chart
-                chartType="Line"
-                width="70%"
-                height="400px"
-                data={data}
-                options={options}
-            />
+            <InformationContainer>
+
+                <ChartContainer>
+                    {UserChart()}
+                </ChartContainer>
+
+                <MapContainer>
+                    {MapLeaflet()}
+                </MapContainer>
+
+            </InformationContainer>
 
         </div>
     );

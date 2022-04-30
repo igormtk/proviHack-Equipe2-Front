@@ -5,6 +5,7 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    align-items: center;
 `
 
 export const NavigationContainer = styled.div`
@@ -12,8 +13,8 @@ export const NavigationContainer = styled.div`
 `
 
 export const Logo = styled.img`
-    width: 100px;
-    margin: 20px;
+    width: 150px;
+    margin: 10px;
 `
 
 export const Icon = styled.img`
