@@ -8,6 +8,7 @@ import ReceiverSignUpPage from "../Pages/ReceiverSignUpPage/ReceiverSignUpPage"
 import UserHomePage from "../Pages/UserHomePage/UserHomePage"
 import ReceiverHomePage from "../Pages/ReceiverHomePage/ReceiverHomePage"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import RequestCollection from "../Pages/RequestCollectionPage"
 
 const RouterComponent = () => {
     return(
@@ -28,6 +29,8 @@ const RouterComponent = () => {
                 <Route path="/signup/receiver" element={<ReceiverSignUpPage/>}/>
 
                 <Route path="/home/receiver" element={<ReceiverHomePage/>}/>
+
+                <Route path="/home/user/request" element={<RequestCollection/>}/>
 
                 <Route path="*" element={<ErrorPage/>}/>
             
