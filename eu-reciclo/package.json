@@ -20,16 +20,13 @@
     "leaflet": "^1.8.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-<<<<<<< HEAD
     "react-google-charts": "^4.0.0",
-=======
 
     "react-leaflet": "^4.0.0",
 
     "react-hook-form": "^7.30.0",
     "react-hot-toast": "^2.2.0",
 
->>>>>>> main
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
