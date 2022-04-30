@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
   HeaderContainer,
   NavigationContainer,
   Icon,
   Logo,
-} from "./HeaderStyle";
-import recicle from "../../Assets/Icons/recicle.png";
-import house from "../../Assets/Icons/house.png";
-import configuration from "../../Assets/Icons/configuration.png";
-import profile from "../../Assets/Icons/profile.png";
+} from './HeaderStyle';
+import recicle from '../../Assets/Icons/recicle.png';
+import house from '../../Assets/Icons/house.png';
+import configuration from '../../Assets/Icons/configuration.png';
+import profile from '../../Assets/Icons/profile.png';
 
 const Header = () => {
   return (
