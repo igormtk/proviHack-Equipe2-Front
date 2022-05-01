@@ -19,13 +19,15 @@ export const StyledButton = styled.button`
     color: var(--primary-green);
   }
 `;
+
 export const BlueStyledButton = styled(StyledButton)`
+  background: transparent;
   border-color: #141736;
-  color: white;
+  color: #141736;
 
   :hover,
   :active {
-    background: transparent;
-    color: #141736;
+    background: #141736;
+    color: white;
   }
 `;

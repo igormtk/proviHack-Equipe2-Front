@@ -2,16 +2,24 @@ import styled from "styled-components";
 
 export const PageContainer = styled.div`
   height: 100vh;
+  
+  #footer {
+    position: fixed;
+  }
 `;
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 90vh;
   justify-content: center;
   align-items: center;
   padding: 30px;
   gap: 10%;
+
+  @media screen and (min-width: 580px) {
+    flex-direction: row;
+  }
 `;
 
 export const LeftContainer = styled.div`
@@ -25,10 +33,17 @@ export const LeftContainer = styled.div`
   }
 
   img {
-    align-self: center;
-    height: auto;
-    max-width: 600px;
-    width: 80%;
+    display: none;
+  }
+
+  @media screen and (min-width: 580px) {
+    img {
+      display: flex;
+      align-self: center;
+      height: auto;
+      max-width: 600px;
+      width: 80%;
+    }
   }
 `;
 export const RightContainer = styled.div`
@@ -46,7 +61,7 @@ export const RightContainer = styled.div`
     gap: 15px;
   }
 
-  span{
+  span {
     font-weight: 100;
     font-size: 18px;
   }

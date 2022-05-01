@@ -1,41 +1,29 @@
 import React from "react"
 import {
   HeaderContainer,
-  NavigationContainer,
   Icon,
+  LightTooltip,
   Logo,
 } from './HeaderStyle';
-import recicle from '../../Assets/Icons/recicle.png';
-import house from '../../Assets/Icons/house.png';
-import configuration from '../../Assets/Icons/configuration.png';
-import profile from '../../Assets/Icons/profile.png';
+import logo from '../../Assets/Icons/logo.png';
+import home from '../../Assets/Icons/home_header.png';
+import { Link } from "react-router-dom";
+
 
 const Header = () => {
   return (
     <HeaderContainer>
       <div>
-        <Logo src={recicle} alt="logo" />
+        <Logo src={logo} alt="eu reciclo logo" />
       </div>
 
-      <NavigationContainer>
         <div>
-          <a href="#">
-            <Icon src={house} alt="home" />
-          </a>
+          <Link to="/home/user">
+          <LightTooltip title="Ir para a home">
+            <Icon src={home} alt="home icon" />
+            </LightTooltip>
+          </Link>
         </div>
-
-        <div>
-          <a href="#">
-            <Icon src={configuration} alt="config" />
-          </a>
-        </div>
-
-        <div>
-          <a href="#">
-            <Icon src={profile} alt="profile" />
-          </a>
-        </div>
-      </NavigationContainer>
     </HeaderContainer>
   );
 };

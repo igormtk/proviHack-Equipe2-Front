@@ -1,34 +1,16 @@
 import styled from "styled-components";
 
-export const PageContainer = styled.div`
-  #footer {
-    position: fixed;
-  }
-`;
-export const Container = styled.div`
-  margin: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-`;
-
-export const ButtonBox = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-`;
-
-export const StyledButton = styled.button`
+export const StyledThinButton = styled.button`
   background-color: transparent;
   border-radius: 20px;
   border: 1px solid var(--primary-green);
-
   color: var(--primary-green);
   cursor: pointer;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 600;
   padding: 5px 20px;
   text-transform: capitalize;
+  width: fit-content;
 
   :hover,
   :active {
@@ -39,7 +21,8 @@ export const StyledButton = styled.button`
     transition: ease all 0.5s;
   }
 `;
-export const BlueStyledButton = styled(StyledButton)`
+
+export const StyledBlueThinButton = styled(StyledThinButton)`
   border-color: #141736;
   color: #141736;
 
@@ -47,14 +30,5 @@ export const BlueStyledButton = styled(StyledButton)`
   :active {
     background-color: #141736;
     color: white;
-  }
-`;
-export const MapContainer = styled.div`
-  width: 100%;
-  height: 100%;
-
-  .leaflet-container {
-    width: 100%;
-    height: 48vh;
   }
 `;

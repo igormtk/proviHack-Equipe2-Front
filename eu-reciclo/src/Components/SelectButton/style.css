@@ -1,15 +1,16 @@
 .card_style {
   align-items: center;
   border-radius: 10px;
+  border: 3px solid transparent;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  padding: 5px;
   height: 120px;
-  width: 120px;
   justify-content: space-evenly;
   margin: 10px;
-  border: 3px solid transparent;
+  padding: 5px;
+  text-align: center;
+  width: 120px;
 }
 
 .card_style:hover {
@@ -43,7 +44,7 @@
 
 p {
   color: var(--purple);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
 }

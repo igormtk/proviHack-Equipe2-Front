@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import MapLeaflet from "../../Components/Map/Map";
 import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer";
 
 const SearchAssociations = () => {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ const SearchAssociations = () => {
           {MapLeaflet()}
         </MapContainer>
       </Container>
+      <Footer/>
     </PageContainer>
   );
 };
