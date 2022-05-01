@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
 import React from "react"
-=======
-import React from 'react';
->>>>>>> 86dcdb8556b414e7c18bc2b8f276ba46bb87dc7f
 import {
   HeaderContainer,
   NavigationContainer,
