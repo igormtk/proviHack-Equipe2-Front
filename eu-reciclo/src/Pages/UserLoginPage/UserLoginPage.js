@@ -18,7 +18,7 @@ const UserLoginPage = () => {
         <RightContainer>
           <UserLoginForm />
           <span>
-            cadastre-se <Link to="/signup/user">aqui</Link>
+            Cadastre-se <Link to="/signup/user">aqui</Link>
           </span>
         </RightContainer>
       </Container>
