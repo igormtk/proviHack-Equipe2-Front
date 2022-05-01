@@ -1,11 +1,7 @@
 import { StyledInput } from "./style";
 
-const InputField = ({ register = null, name = "", ...rest }) => {
-  return !!register ? (
-    <StyledInput {...register(name)} {...rest} />
-  ) : (
-    <StyledInput {...rest} />
-  );
+const InputField = ({ register, name, ...rest }) => {
+  return <StyledInput {...register(name)} {...rest} />;
 };
 
 export default InputField;

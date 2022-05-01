@@ -1,6 +1,6 @@
 import React from "react";
 import useFormHook from "../../Hooks/useFormHook";
-import InputField from "../../Components/Input";
+import {StyledInput} from "../../Components/Input/style.js";
 import PrimaryButton from "../../Components/PrimaryButton";
 import { UseLogin } from "../../Contexts/loginContext";
 
@@ -17,7 +17,7 @@ const UserLoginForm = () => {
   return (
     <div>
       <form onSubmit={onSubmitLogin}>
-        <InputField
+        <StyledInput
           name="email"
           value={form.email}
           onChange={handleInputOnChange}
@@ -29,7 +29,7 @@ const UserLoginForm = () => {
           required
         />
 
-        <InputField
+        <StyledInput
           name="password"
           value={form.password}
           onChange={handleInputOnChange}
