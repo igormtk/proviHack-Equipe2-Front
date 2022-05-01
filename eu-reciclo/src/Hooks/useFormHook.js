@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useForm = (initialState) => {
+const useFormHook = (initialState) => {
     const [form, setForm] = useState(initialState);
 
     const handleInputOnChange = (event) => {
@@ -15,4 +15,4 @@ const useForm = (initialState) => {
     return { form, handleInputOnChange, clear, setForm };
   };
 
-  export default useForm;  
+  export default useFormHook;  

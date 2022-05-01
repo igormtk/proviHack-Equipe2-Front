@@ -1,41 +1,54 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-export const Card = styled.div`
-   border: 1px solid #E5E8E8;
-   border-radius: 10px;
-   width: 10em;
-   height: 7em;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: center;
-   margin: 20px;
-   padding-top: 10px;
-   padding-right: 10px;
-   padding-left: 10px;
-   box-shadow: -5px 5px 5px rgba(29, 140, 231, 0.45);
+export const Card = styled.a`
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #e5e8e8;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 7em;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px 10px 0 10px;
+  width: 100px;
 
-   a:link {
-   color:#7B61FF;
-   text-decoration:none;
-   }
+  h2 {
+    font-size: 16px;
+    font-weight: 500;
+  }
 
-   a:visited {
-   color:#7B61FF;
-   text-decoration:none;
-   }
-`
+  &:link,
+  &:visited {
+    color: #7b61ff;
+    text-decoration: none;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: ease all 0.5s;
+    box-shadow: -5px 5px 5px rgba(29, 140, 231, 0.45);
+  }
+
+  :nth-child(1) {
+    background-color: #edffef;
+  }
+  :nth-child(2) {
+    background-color: #ecfbff;
+  }
+  :nth-child(3) {
+    background-color: #f4f2ff;
+  }
+  :nth-child(4) {
+    background-color: #ecf4ff;
+  }
+  :nth-child(5) {
+    background-color: #fff2ec;
+  }
+`;
 
 export const CardIcon = styled.img`
-   width: 2em;
-   height: 2em;
-
-   a:link {
-   color:#7B61FF;
-   text-decoration:none;
-   }
-   a:visited {
-   color:#999999;
-   text-decoration:none;
-   }
-`
+  height: 45px;
+  width: auto;
+`;

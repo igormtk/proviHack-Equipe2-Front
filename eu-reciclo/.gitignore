@@ -6,6 +6,7 @@
 .pnp.js
 .vscode/
 yarn.lock
+.env
 
 # testing
 /coverage

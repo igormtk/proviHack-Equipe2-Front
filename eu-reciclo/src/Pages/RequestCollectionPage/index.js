@@ -4,9 +4,8 @@ import ping from "../../Assets/Icons/ping.png";
 import calendar from "../../Assets/Icons/calendar.png";
 import glass from "../../Assets/Icons/glass.png";
 import paper from "../../Assets/Icons/paper.png";
-import game from "../../Assets/Icons/game.png";
+import union from "../../Assets/Icons/union.png";
 import house from "../../Assets/Icons/house.png";
-import send from "../../Assets/Icons/send.png";
 import { PageBox, Container, CssTextField, QuestionBox } from "./style.js";
 import BaseModal from "../../Components/Modal";
 import { toast, Toaster } from "react-hot-toast";
@@ -14,6 +13,8 @@ import { CustomToast } from "../../Helpers/Toast";
 import Header from "../../Components/Header/Header";
 import { missingFieldsFunction } from "../../Helpers/HelperFunctions";
 import { useResiduesContext } from "../../Contexts/residuesContext";
+import Footer from "../../Components/Footer";
+import SecondaryButton from "../../Components/SecondaryButton";
 
 const RequestCollection = () => {
   const [locationModal, setLocationModal] = useState(false);
@@ -97,8 +98,8 @@ const RequestCollection = () => {
               <SelectButton
                 IconPicture={glass}
                 customColor="green"
-                text="Vidro"
-                name="vidro"
+                text="Vidro / Plástico "
+                name="vidro ou plastico"
                 onClick={(e) => handleProducts(e)}
               />
               <SelectButton
@@ -109,14 +110,14 @@ const RequestCollection = () => {
                 onClick={(e) => handleProducts(e)}
               />
               <SelectButton
-                IconPicture={game}
+                IconPicture={house}
                 customColor="pink"
-                text="Eletrônicos"
-                name="eletrônicos"
+                text="Alumínio"
+                name="alumínio"
                 onClick={(e) => handleProducts(e)}
               />
               <SelectButton
-                IconPicture={house}
+                IconPicture={union}
                 customColor="green"
                 text="Entulho"
                 name="entulho"
@@ -134,10 +135,8 @@ const RequestCollection = () => {
                 value={info.quantity}
                 onChange={(e) => setInfo({ ...info, quantity: e.target.value })}
               />
-              <SelectButton
-                IconPicture={send}
-                customColor="pink"
-                text="Enviar"
+              <SecondaryButton
+                children="Enviar"
                 onClick={handleForm}
               />
             </div>
@@ -234,6 +233,7 @@ const RequestCollection = () => {
         </BaseModal>
       )}
       <Toaster />
+      <Footer/>
     </Container>
   );
 };

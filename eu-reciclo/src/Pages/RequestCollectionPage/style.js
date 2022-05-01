@@ -3,6 +3,20 @@ import { styled as styledMui } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
+export const Container = styled.div`
+  input[type="datetime-local"] {
+    color: var(--purple);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  @media screen and (min-height: 712px) and (min-width: 800px){
+    #footer{
+      position: fixed;
+    }
+  }
+`;
+
 export const PageBox = styled.div`
   align-items: center;
   display: flex;
@@ -15,16 +29,19 @@ export const PageBox = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0 auto;
     justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: 10px;
     max-width: 900px;
   }
 
   h2 {
+    font-size: 22px;
     text-transform: capitalize;
     color: var(--primary-green);
   }
 `;
+
 export const QuestionBox = styled.div`
   width: 400px;
 
@@ -65,14 +82,6 @@ export const QuestionBox = styled.div`
     .questions__box {
       margin: 10px;
     }
-  }
-`;
-
-export const Container = styled.div`
-  input[type="datetime-local"] {
-    color: var(--purple);
-    padding: 20px;
-    border-radius: 10px;
   }
 `;
 

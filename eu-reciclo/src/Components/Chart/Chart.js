@@ -30,7 +30,7 @@ export default function UserChart() {
     <Chart
       chartType="Line"
       width="100%"
-      height="400px"
+      height="300px"
       data={data}
       options={options}
     />
