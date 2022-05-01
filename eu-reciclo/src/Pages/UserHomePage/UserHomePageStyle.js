@@ -36,13 +36,14 @@ export const InformationContainer = styled.div`
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  margin: 20px;
 
   @media screen and (min-width: 700px) {
     flex-wrap: nowrap;
   }
 `;
 
-export const MapContainer = styled.div`
+export const VideoContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -56,15 +57,27 @@ export const MapContainer = styled.div`
 `;
 
 export const ChartContainer = styled.div`
-  border: 1px solid #e5e8e8;
+  align-items: center;
   border-radius: 10px;
+  border: 1px solid #e5e8e8;
+  box-shadow: -5px 5px 5px rgba(29, 140, 231, 0.45);
   display: flex;
+  flex-direction: column;
+  height: auto;
   justify-content: center;
   padding: 20px;
-  align-items: center;
-  height: auto;
-  box-shadow: -5px 5px 5px rgba(29, 140, 231, 0.45);
-  transform: scale(0.8);
+  min-width: 300px;
+  width: 30%;
+
+  #chart {
+    transform: scale(0.6);
+  }
+
+  @media screen and (min-width: 700px) {
+    #chart {
+      transform: scale(0.8);
+    }
+  }
 `;
 
 export const ButtonContainer = styled.div`

@@ -156,6 +156,7 @@ const RequestCollection = () => {
             <h2>3 - Quantidade de Sacos Pláticos</h2>
             <div className="cards__box box3">
               <input
+                type="number"
                 className="input_quantity"
                 value={info.quantity}
                 onChange={(e) => setInfo({ ...info, quantity: e.target.value })}
