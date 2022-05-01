@@ -65,7 +65,6 @@ const RequestCollection = () => {
   const handleCep = (e) => {
     setInfo({ ...info, cep: e.target.value });
     let validCep = e.target.value;
-    console.log(validCep);
 
     if (validCep.length >= 8) {
       validCep = validCep.replace("-", "");
@@ -73,7 +72,6 @@ const RequestCollection = () => {
       if (validCep.length === 8) {
         ViaCep.get(`/${validCep}/json/`)
           .then((res) => {
-            console.log(res.data);
             setInfo({
               ...info,
               cep: res.data["cep"],

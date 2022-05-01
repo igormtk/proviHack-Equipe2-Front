@@ -42,7 +42,6 @@ const UserSignUpForm = () => {
   const onSubmitLogin = (signUpSchema) => {
     delete signUpSchema.confirmPassword;
 
-    console.log(signUpSchema);
     registerUser(signUpSchema);
   };
 
@@ -124,7 +123,7 @@ const UserSignUpForm = () => {
 
       <CheckboxContainer>
         <label>
-            <input type="checkbox" name="terms" required />
+          <input type="checkbox" name="terms" required />
           Aceito enviar meus dados para o processo de coleta seletiva
         </label>
       </CheckboxContainer>
