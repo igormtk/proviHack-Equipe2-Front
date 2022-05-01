@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
-import { styled as styledMui } from '@mui/material/styles';
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import { styled as styledMui } from "@mui/material/styles";
 
 export const HeaderContainer = styled.div`
   align-items: center;
@@ -10,6 +10,12 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 8px 20px;
+
+  svg {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #3e3e3e;
+  }
 `;
 
 export const NavigationContainer = styled.div`
@@ -27,12 +33,12 @@ export const Icon = styled.img`
 `;
 
 export const LightTooltip = styledMui(({ className, ...props }) => (
-    <Tooltip {...props} classes={{ popper: className }} />
-  ))(({ theme }) => ({
-    [`& .${tooltipClasses.tooltip}`]: {
-      backgroundColor: theme.palette.common.white,
-      color: 'rgba(0, 0, 0, 0.87)',
-      boxShadow: theme.shadows[1],
-      fontSize: 11,
-    },
-  }));
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[1],
+    fontSize: 11,
+  },
+}));

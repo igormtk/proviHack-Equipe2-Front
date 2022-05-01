@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../Services";
+import { toast } from "react-hot-toast";
 
 export const LoginContext = createContext();
 
@@ -20,7 +21,7 @@ export const LoginProvider = ({ children }) => {
         setToken(access_token);
         navigate("/home/user");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("Email ou senha estão errados!"));
   }, []);
 
   const logOut = useCallback(() => {
