@@ -21,7 +21,7 @@ const UserLoginForm = () => {
           name="email"
           value={form.email}
           onChange={handleInputOnChange}
-          label="login"
+          label="email"
           placeholder="email@email.com"
           type="email"
           variant="outlined"
@@ -41,7 +41,7 @@ const UserLoginForm = () => {
           required
         />
 
-        <PrimaryButton type="submit">Próximo</PrimaryButton>
+        <PrimaryButton type="submit">Entrar</PrimaryButton>
       </form>
     </div>
   );

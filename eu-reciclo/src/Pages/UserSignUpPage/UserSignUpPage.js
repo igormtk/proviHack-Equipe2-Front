@@ -1,19 +1,17 @@
 import React from "react"
 import UserSignUpForm from "./UserSignUpForm";
-import { SignUpContainer } from "./UserSingUpFormStyle";
+import { Container, SignUpContainer } from "./UserSingUpFormStyle";
 import Header from "../../Components/Header/Header"
 import Footer from "../../Components/Footer";
 
 const UserSignUpPage = () => { 
 
     return (
-        <div>
+        <Container>
         
         <Header/>
 
         <SignUpContainer>
-
-            <h1>CADASTRE-SE</h1>
 
             <UserSignUpForm/>
 
@@ -21,7 +19,7 @@ const UserSignUpPage = () => {
 
         <Footer/>
 
-        </div>
+        </Container>
     );
 }
 
