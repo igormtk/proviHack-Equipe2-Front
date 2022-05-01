@@ -10,6 +10,8 @@ export const Container = styled.div`
   height: 90vh;
   justify-content: center;
   align-items: center;
+  padding: 30px;
+  gap: 10%;
 `;
 
 export const LeftContainer = styled.div`
@@ -18,7 +20,7 @@ export const LeftContainer = styled.div`
 
   h1 {
     color: var(--primary-green);
-    font-size: 38px;
+    font-size: 2rem;
     text-align: center;
   }
 

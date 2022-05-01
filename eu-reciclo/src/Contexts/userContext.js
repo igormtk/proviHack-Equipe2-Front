@@ -12,7 +12,7 @@ export const UserProvider = ({ children }) => {
   function registerUser(data) {
     api
       .post("/user/register", data)
-      .then((res) => navigate("/login/user"))
+      .then((res) => navigate("/"))
       .catch((err) => console.log(err));
   }
 
