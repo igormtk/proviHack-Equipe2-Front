@@ -3,7 +3,7 @@ import provi from "../../Assets/Img/provi.png";
 
 const Footer = () => {
   return (
-    <Container>
+    <Container id="footer">
       <div>
         <img src={provi} alt="Logo da ProviHack" />
         <p>equipe: 02 projeto: eu reciclo!</p>

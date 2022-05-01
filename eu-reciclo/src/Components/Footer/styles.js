@@ -7,7 +7,7 @@ export const Container = styled.div`
   background: rgba(208, 211, 21, 0.34);
   bottom: 0;
   left: 0;
-  position: fixed;
+  position: relative;
   text-align: center;
   width: 100%;
 
@@ -25,9 +25,16 @@ export const Container = styled.div`
   }
 
   p {
-    color: black;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 12px;
+    display: none;
+  }
+
+  @media screen and (min-width: 550px) {
+    p {
+      display: flex;
+      color: black;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+    }
   }
 `;
