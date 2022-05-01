@@ -13,6 +13,7 @@ import {
 import RequestCollection from "../Pages/RequestCollectionPage";
 import SearchAssociations from "../Pages/SearchAssociations";
 import { UseLogin } from "../Contexts/loginContext";
+import Congrats from "../Pages/Congrats/Congrats";
 
 const RouterComponent = () => {
   const { token } = UseLogin();
@@ -30,13 +31,14 @@ const RouterComponent = () => {
             path="/user/searchAssociations"
             element={<SearchAssociations />}
           />
+          <Route path="/congrats" element={<Congrats />} />
         </>
       ) : (
         <>
           <Route path="*" element={<Navigate to="/" replace />} />
         </>
       )}
-      <Route path="*" element={<ErrorPage />} />:
+      <Route path="*" element={<ErrorPage />} />
     </Routes>
   );
 };

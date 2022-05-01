@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import { styled as styledMui } from "@mui/material/styles";
 
 export const Container = styled.div`
   align-items: center;
@@ -12,6 +14,7 @@ export const Container = styled.div`
   width: 100%;
 
   div {
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -38,3 +41,14 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const LightTooltip = styledMui(({ className, ...props }) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[1],
+    fontSize: 11,
+  },
+}));
