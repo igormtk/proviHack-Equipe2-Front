@@ -94,7 +94,7 @@ function MapForm() {
         {' '}
         <form onSubmit={handleSubmit} className="landing-page-form">
           <fieldset>
-            <legend>Entregas</legend>
+            <legend>Buscar Associação</legend>
             <div className="input-block">
               <label htmlFor="address">Endereço</label>
               <AsyncSelect

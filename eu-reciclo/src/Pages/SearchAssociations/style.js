@@ -1,16 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const PageContainer = styled.div`
-  #footer {
-    position: fixed;
-  }
-`;
+export const PageContainer = styled.div``;
 
 export const Container = styled.div`
   margin: 30px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: relative;
 `;
 
 export const ButtonBox = styled.div`
