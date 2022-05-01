@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import RequestCollection from '../Pages/RequestCollectionPage';
 import SearchAssociations from '../Pages/SearchAssociations';
 import MapForm from '../Components/MapForm/MapForm';
+import AssociationHomePage from '../Pages/AssociationHomePage';
 
 const RouterComponent = () => {
   return (
@@ -17,6 +18,8 @@ const RouterComponent = () => {
       <Route path="/signup/user" element={<UserSignUpPage />} />
 
       <Route path="/home/user" element={<UserHomePage />} />
+
+      <Route path="/home/association" element={<AssociationHomePage />} />
 
       <Route path="/map" element={<MapLeaflet />} />
 

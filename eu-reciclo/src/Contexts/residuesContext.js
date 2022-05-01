@@ -1,15 +1,16 @@
-import { createContext, useContext } from "react";
-import api from "../Services";
-import { UseLogin } from "./loginContext";
+import { createContext, useContext, useEffect, useState } from 'react';
+import api from '../Services';
+import { UseLogin } from './loginContext';
 
 export const ResiduesContext = createContext();
 
 export const ResiduesProvider = ({ children }) => {
   const { token } = UseLogin();
+  const [residues, setResidues] = useState();
 
   function registerResidues(data) {
     api
-      .post("/residues/register", data, {
+      .post('/residues/register', data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -20,8 +21,8 @@ export const ResiduesProvider = ({ children }) => {
 
   function retrieveResidues() {
     api
-      .get("/residues")
-      .then((res) => console.log(res))
+      .get('/residues')
+      .then((res) => setResidues(res.data))
       .catch((err) => console.log(err));
   }
 
@@ -43,11 +44,16 @@ export const ResiduesProvider = ({ children }) => {
       .catch((err) => console.log(err));
   }
 
+  useEffect(() => {
+    retrieveResidues();
+  }, []);
+
   return (
     <ResiduesContext.Provider
       value={{
         registerResidues,
         updateResidue,
+        residues,
         retrieveResidues,
         retrieveResidue,
       }}
