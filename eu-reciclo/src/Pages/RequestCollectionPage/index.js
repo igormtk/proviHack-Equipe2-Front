@@ -7,13 +7,7 @@ import paper from "../../Assets/Icons/paper.png";
 import game from "../../Assets/Icons/game.png";
 import house from "../../Assets/Icons/house.png";
 import send from "../../Assets/Icons/send.png";
-import {
-  PageBox,
-  Container,
-  CssTextField,
-  GreenButton,
-  QuestionBox,
-} from "./style.js";
+import { PageBox, Container, CssTextField, QuestionBox } from "./style.js";
 import BaseModal from "../../Components/Modal";
 import { toast, Toaster } from "react-hot-toast";
 import { CustomToast } from "../../Helpers/Toast";
@@ -156,16 +150,6 @@ const RequestCollection = () => {
           open={locationModal}
           handleClose={() => setLocationModal(false)}
         >
-          {/* <GreenButton variant="contained" onClick={handleMyAddress}>
-            Usar meu endereço
-          </GreenButton> */}
-          {/* <GreenButton
-            variant="contained"
-            onClick={() => setOtherAddress(true)}
-          >
-            Usar outro endereço
-          </GreenButton> */}
-
           <div>
             <label>Preencha o endereço para coleta:</label>
             <CssTextField
