@@ -17,7 +17,6 @@ import { UseLogin } from "../Contexts/loginContext";
 const RouterComponent = () => {
   const { token } = UseLogin();
 
-  console.log(token);
   return (
     <Routes>
       <Route path="/" element={<UserLoginPage />} />
