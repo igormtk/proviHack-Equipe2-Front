@@ -4,7 +4,7 @@ export const SignUpContainer = styled.div`
     display:flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    width: 30%;
     margin-left: auto;
     margin-right: auto;
 `

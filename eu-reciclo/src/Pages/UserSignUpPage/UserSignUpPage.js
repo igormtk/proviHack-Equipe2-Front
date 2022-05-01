@@ -2,6 +2,7 @@ import React from "react"
 import UserSignUpForm from "./UserSignUpForm";
 import { SignUpContainer } from "./UserSingUpFormStyle";
 import Header from "../../Components/Header/Header"
+import Footer from "../../Components/Footer";
 
 const UserSignUpPage = () => { 
 
@@ -17,6 +18,8 @@ const UserSignUpPage = () => {
             <UserSignUpForm/>
 
         </SignUpContainer>
+
+        <Footer/>
 
         </div>
     );
