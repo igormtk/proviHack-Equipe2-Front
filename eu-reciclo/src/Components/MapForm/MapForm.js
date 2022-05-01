@@ -9,6 +9,7 @@ import './MapForm.css';
 import L, { Icon } from 'leaflet';
 import { postos } from './data/postosDeReciclagem';
 import recicleIcon from './recicle.svg';
+import { useUserContext } from '../../Contexts/userContext';
 
 export const icon = new Icon({
   iconUrl: recicleIcon,
@@ -26,10 +27,11 @@ L.Icon.Default.mergeOptions({
 const initialPosition = { lat: -22.2154042, lng: -54.8331331 };
 
 function MapForm() {
+  const { user } = useUserContext();
   const [deliveries, setDeliveries] = useState([]);
 
   const [position, setPosition] = useState(null);
-  const [name, setName] = useState('Teste');
+  const [name, setName] = useState('');
   const [complement, setComplement] = useState('');
   const [address, setAddress] = useState(null);
 
@@ -106,7 +108,11 @@ function MapForm() {
               />
             </div>
           </fieldset>
-          <button className="confirm-button" type="submit">
+          <button
+            className="confirm-button"
+            type="submit"
+            onClick={() => setName(user?.name)}
+          >
             Confirmar
           </button>
         </form>

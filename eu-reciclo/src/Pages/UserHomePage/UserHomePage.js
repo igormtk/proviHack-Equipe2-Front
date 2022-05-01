@@ -1,28 +1,28 @@
-import React from "react";
-import Header from "../../Components/Header/Header";
-import MaterialCard from "../../Components/MaterialCards/MaterialCards";
-import house from "../../Assets/Icons/house.png";
-import union from "../../Assets/Icons/union.png";
-import game from "../../Assets/Icons/game.png";
-import glass from "../../Assets/Icons/glass.png";
-import paper from "../../Assets/Icons/paper.png";
-import { Chart } from "react-google-charts";
-import MapLeaflet from "../../Components/Map/Map";
+import React from 'react';
+import Header from '../../Components/Header/Header';
+import MaterialCard from '../../Components/MaterialCards/MaterialCards';
+import house from '../../Assets/Icons/house.png';
+import union from '../../Assets/Icons/union.png';
+import game from '../../Assets/Icons/game.png';
+import glass from '../../Assets/Icons/glass.png';
+import paper from '../../Assets/Icons/paper.png';
+import { Chart } from 'react-google-charts';
 import {
   CardContainer,
   Title,
   Title2,
   InformationContainer,
   ChartContainer,
-  MapContainer,
-  ButtonContainer,
+  VideoContainer,
   Container,
   ContentContainer,
-} from "./UserHomePageStyle";
-import UserChart from "../../Components/Chart/Chart";
-import Footer from "../../Components/Footer";
-import { useNavigate } from "react-router-dom";
-import SecondaryButton from "../../Components/SecondaryButton";
+  ButtonContainer,
+} from './UserHomePageStyle';
+import UserChart from '../../Components/Chart/Chart';
+import Footer from '../../Components/Footer';
+import { useNavigate } from 'react-router-dom';
+import SecondaryButton from '../../Components/SecondaryButton';
+import reciclagem from '../../Assets/Videos/Recicla Capixaba.mp4';
 
 const UserHomePage = () => {
   const navigate = useNavigate();
@@ -67,17 +67,14 @@ const UserHomePage = () => {
         </CardContainer>
 
         <InformationContainer>
-          <ChartContainer>{UserChart()}</ChartContainer>
-
-          <MapContainer>
-            {MapLeaflet()}
-
+          <ChartContainer>
+            <div id="chart">{UserChart()}</div>
             <ButtonContainer>
               <SecondaryButton
                 fullWidth
                 variant="outlined"
                 type="submit"
-                onClick={() => navigate("/user/request")}
+                onClick={() => navigate('/user/request')}
               >
                 Solicitar Coleta
               </SecondaryButton>
@@ -87,12 +84,18 @@ const UserHomePage = () => {
                 fullWidth
                 variant="outlined"
                 type="submit"
-                onClick={() => navigate("/user/searchAssociations")}
+                onClick={() => navigate('/user/searchAssociations')}
               >
                 Buscar Associação
               </SecondaryButton>
             </ButtonContainer>
-          </MapContainer>
+          </ChartContainer>
+
+          <VideoContainer>
+            <video width="100%" height="100%" controls>
+              <source src={reciclagem} type="video/mp4" />
+            </video>
+          </VideoContainer>
         </InformationContainer>
       </ContentContainer>
       <Footer />

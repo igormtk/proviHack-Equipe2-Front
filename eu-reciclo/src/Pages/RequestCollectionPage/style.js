@@ -10,8 +10,8 @@ export const Container = styled.div`
     border-radius: 10px;
   }
 
-  @media screen and (min-height: 712px) and (min-width: 800px){
-    #footer{
+  @media screen and (min-height: 712px) and (min-width: 800px) {
+    #footer {
       position: fixed;
     }
   }
@@ -21,7 +21,7 @@ export const PageBox = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin: 25px;
 
   @media (min-width: 600px) and (min-height: 600px) {
     align-content: space-around;
@@ -43,7 +43,8 @@ export const PageBox = styled.div`
 `;
 
 export const QuestionBox = styled.div`
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
 
   .cards__box {
     display: flex;
