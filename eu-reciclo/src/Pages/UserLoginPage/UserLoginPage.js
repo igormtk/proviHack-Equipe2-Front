@@ -1,31 +1,31 @@
-import React from "react"
-import { Button } from "@mui/material"
-import UserLoginForm from "./UserLoginForm"
-import { useNavigate } from "react-router-dom"
+import React from "react";
+import UserLoginForm from "./UserLoginForm";
+import { Link, useNavigate } from "react-router-dom";
+import { Container, LeftContainer, PageContainer, RightContainer } from "./UserLoginPageStyle";
+import recicle from "../../Assets/Img/recicle.png";
+import Footer from "../../Components/Footer";
 
 const UserLoginPage = () => {
-    let navigate = useNavigate()
+  let navigate = useNavigate();
 
-    return (
-        <div>
+  return (
+    <PageContainer>
+      <Container>
+        <LeftContainer>
+          <h1>EU RECICLO!</h1>
+          <img src={recicle} alt="Recicle!" />
+        </LeftContainer>
 
-        <h1>LOGIN USUÁRIO / EMPRESA</h1>
-    
-        <UserLoginForm/>
+        <RightContainer>
+          <UserLoginForm />
+          <span>
+            cadastre-se <Link to="/signup/user">aqui</Link>
+          </span>
+        </RightContainer>
+      </Container>
+      <Footer />
+    </PageContainer>
+  );
+};
 
-        <h3>Ainda não possui conta?</h3>
-
-        <Button 
-            fullWidth 
-            variant="contained" 
-            type="submit" 
-            onClick={() => navigate("/signup/user")}
-            color="success">
-            <p>CADASTRAR</p>
-        </Button>
-
-        </div>
-    );
-}
-
-export default UserLoginPage
+export default UserLoginPage;
