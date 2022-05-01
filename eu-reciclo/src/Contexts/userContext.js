@@ -1,29 +1,31 @@
-import { createContext, useContext } from 'react';
-import api from '../Services';
-import { UseLogin } from './loginContext';
+import { createContext, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import api from "../Services";
+import { UseLogin } from "./loginContext";
 
 export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const { token } = UseLogin();
+  const navigate = useNavigate();
 
-  function registerUser() {
+  function registerUser(data) {
     api
-      .post('/user/register')
-      .then((res) => console.log(res))
+      .post("/user/register", data)
+      .then((res) => navigate("/login/user"))
       .catch((err) => console.log(err));
   }
 
   function retrieveUsers() {
     api
-      .get('/user')
+      .get("/user")
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   }
 
   function updateAddress(data) {
     api
-      .put('/user/address', data, {
+      .put("/user/address", data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -34,7 +36,7 @@ export const UserProvider = ({ children }) => {
 
   function updateUser(data) {
     api
-      .put('/user', data, {
+      .put("/user", data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -45,7 +47,7 @@ export const UserProvider = ({ children }) => {
 
   function deleteUser() {
     api
-      .delete('/user', {
+      .delete("/user", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
