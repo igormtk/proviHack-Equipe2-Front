@@ -1,12 +1,11 @@
 import React from "react";
 import UserLoginForm from "./UserLoginForm";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Container, LeftContainer, PageContainer, RightContainer } from "./UserLoginPageStyle";
 import recicle from "../../Assets/Img/recicle.png";
 import Footer from "../../Components/Footer";
 
 const UserLoginPage = () => {
-  let navigate = useNavigate();
 
   return (
     <PageContainer>
