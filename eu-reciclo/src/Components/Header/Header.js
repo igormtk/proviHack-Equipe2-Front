@@ -9,7 +9,7 @@ import { UseLogin } from "../../Contexts/loginContext";
 const Header = () => {
   const { logOut } = UseLogin();
   return (
-    <HeaderContainer>
+    <HeaderContainer id="header">
       <div>
         <Logo src={logo} alt="eu reciclo logo" />
       </div>
