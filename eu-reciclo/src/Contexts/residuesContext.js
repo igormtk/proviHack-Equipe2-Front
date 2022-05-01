@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 import api from "../Services";
 import { UseLogin } from "./loginContext";
+import { toast } from "react-hot-toast";
 
 export const ResiduesContext = createContext();
 
@@ -14,8 +15,16 @@ export const ResiduesProvider = ({ children }) => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err.response));
+      .then((res) => {
+        console.log(res);
+        toast.success(
+          "Solicitação feita com sucesso! Em breve entraremos em contato"
+        );
+      })
+      .catch((err) => {
+        console.log(err.response);
+        toast.error("Token expirou!!");
+      });
   }
 
   function retrieveResidues() {
