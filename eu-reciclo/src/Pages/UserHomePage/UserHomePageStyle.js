@@ -25,7 +25,7 @@ export const MapContainer = styled.div`
     border-radius: 10px;
     width: 20%;
     padding: 20px;
-    box-shadow: -20px 13px 10px rgba(29, 140, 231, 0.45);
+    box-shadow: -5px 5px 5px rgba(29, 140, 231, 0.45);
     margin-left: 40px;
 `
 
@@ -37,7 +37,7 @@ export const ChartContainer = styled.div`
     padding: 20px;
     align-items: center;
     width: 40%;
-    box-shadow: -20px 13px 10px rgba(29, 140, 231, 0.45);
+    box-shadow: -5px 5px 5px rgba(29, 140, 231, 0.45);
 `
 
 export const ButtonContainer = styled.div`
