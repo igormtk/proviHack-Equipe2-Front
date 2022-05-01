@@ -16,5 +16,5 @@ export const fetchLocalMapBox = (local) =>
     .then((data) => data);
 
 export const ViaCep = axios.create({
-  baseURL: "http://viacep.com.br/ws",
+  baseURL: "https://viacep.com.br/ws",
 });
