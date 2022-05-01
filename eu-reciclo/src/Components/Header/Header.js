@@ -14,7 +14,7 @@ const Header = () => {
         <Logo src={logo} alt="eu reciclo logo" />
       </div>
 
-      <div>
+      <div className="links_box">
         <Link to="/home/user">
           <LightTooltip title="Ir para a home">
             <div>

@@ -11,25 +11,21 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   padding: 8px 20px;
 
+  .links_box {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 80px;
+  }
+
   svg {
-    margin-left: 20px;
     font-size: 20px;
     color: #3e3e3e;
   }
 `;
 
-export const NavigationContainer = styled.div`
-  display: flex;
-`;
-
 export const Logo = styled.img`
   height: auto;
   width: 40px;
-`;
-
-export const Icon = styled.img`
-  height: auto;
-  width: 20px;
 `;
 
 export const LightTooltip = styledMui(({ className, ...props }) => (
