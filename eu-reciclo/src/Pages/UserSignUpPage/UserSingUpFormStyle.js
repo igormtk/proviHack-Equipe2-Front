@@ -34,18 +34,22 @@ export const CheckboxContainer = styled.div`
   margin: 15px 0;
 
   label {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 10px;
+    align-items: center;
     color: black;
     display: flex;
-    align-items: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
   }
 
   input[type="checkbox"] {
     accent-color: green;
     cursor: pointer;
+  }
+
+  input {
+    margin-right: 10px;
   }
 `;
 

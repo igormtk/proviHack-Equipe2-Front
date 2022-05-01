@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PageContainer = styled.div`
   height: 100vh;
-  
+
   #footer {
     position: fixed;
   }
@@ -61,12 +61,21 @@ export const RightContainer = styled.div`
     gap: 15px;
   }
 
+  form label {
+    text-align: center;
+  }
+
+  form {
+    filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
+  }
+
   span {
     font-weight: 100;
     font-size: 18px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
   span a {
-    color: #0d2ccf;
+    color: var(--primary-green);
     font-weight: 500;
     line-height: 30px;
     text-decoration-line: underline;
