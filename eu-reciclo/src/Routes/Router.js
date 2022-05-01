@@ -24,13 +24,12 @@ const RouterComponent = () => {
       {token ? (
         <>
           <Route path="/home/user" element={<UserHomePage />} />
-          <Route path="/map" element={<MapLeaflet />} />
+
           <Route path="/user/request" element={<RequestCollection />} />
           <Route
             path="/user/searchAssociations"
             element={<SearchAssociations />}
           />
-          <Route path="/map" element={<MapLeaflet />} />{" "}
         </>
       ) : (
         <>
