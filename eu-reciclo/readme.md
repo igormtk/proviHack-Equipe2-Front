@@ -1,9 +1,62 @@
-<a href="https://www.flaticon.com/br/icones-gratis/botao-home" title="botão home ícones">Botão home ícones criados por Freepik - Flaticon</a>
+<h1 align="center">
+   <a href="https://imgur.com/umpxPSw"><img src="https://i.imgur.com/umpxPSw.png" title="source: imgur.com" width="250px"/></a>
+</h1>
 
-<a href="https://www.flaticon.com/br/icones-gratis/config" title="config ícones">Config ícones criados por Ghozi Muhtarom - Flaticon</a>
+<p align="center">🚀 Plataforma criada para automatizar o processo de coleta seletiva e motivar as pessoas a descartarem corretamente o lixo para reciclagem.</p>
 
-<a href="https://www.flaticon.com/br/icones-gratis/ui" title="ui ícones">Ui ícones criados por Anggara - Flaticon</a>
+<h4 align="center"> 
+	🚧  Eu reciclo 🚀 Primeira versão concluída.  🚧
+</h4>
 
-<a href="https://www.flaticon.com/br/icones-gratis/lixeira-de-reciclagem" title="lixeira de reciclagem ícones">Lixeira de reciclagem ícones criados por Freepik - Flaticon</a>
+<h2 align="center"> 
+	Preview da tela home do site.
+</h2>
+<h1 align="center">
+     <a href="https://imgur.com/Wj8yMMY"><img src="https://i.imgur.com/Wj8yMMY.png" title="source: imgur.com" /></a><br><br><br><br>
+</h1>
 
-<a target="_blank" href="https://icons8.com/icon/103894/sinal-de-reciclagem">Sinal de Reciclagem</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+### ⚙️ Funcionalidades
+
+- [x] Os usuários podem se cadastrar na plataforma web.
+- [x] Efetuar Login por meio do email e senha.
+- [x] Vizualizar associações de coleta em um mapa.
+- [X] Fazer solicitação de recolhimento de resíduos por endereço informado. 
+
+## 🚀 Tecnologias
+
+- [x] Linguagem de programação: JavaScript
+- [x] Framework: ReactJs
+- [x] React Google Charts
+- [x] Axios
+- [X] MATERIAL-UI
+- [x] React Leallet
+- [x] ViaCEP
+
+## 🎨 Layout
+
+O protótipo da aplicação está disponível no Figma: [WIREFRAME](https://www.figma.com/file/98OjMur40dwPJTZFco8Q43/Provi-Hack?node-id=0%3A1)
+
+
+### 🎲 Rodando o Front End
+
+```bash
+# Baixe este repositório
+$ git clone https://github.com/igormtk/proviHack-Equipe2-Front.git
+
+# entre na pasta eu-reciclo
+$ cd /proviHack-Equipe2-Front/eu-reciclo
+
+# instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento.
+$ npm run start
+
+# O servidor iniciará na porta:3000 - acesse <http://localhost:3000>
+
+```
+
+## Repositío Backend
+[repositório backend utilizado](https://github.com/WillianSantosC/provihack-equipe2-back)
+
+---------------------------------------------------
