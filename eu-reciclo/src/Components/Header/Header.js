@@ -1,5 +1,5 @@
 import React from "react";
-import { HeaderContainer, Icon, LightTooltip, Logo } from "./HeaderStyle";
+import { HeaderContainer, LightTooltip, Logo } from "./HeaderStyle";
 import logo from "../../Assets/Icons/logo.png";
 import home from "../../Assets/Icons/home_header.png";
 import { Link } from "react-router-dom";
@@ -17,12 +17,16 @@ const Header = () => {
       <div>
         <Link to="/home/user">
           <LightTooltip title="Ir para a home">
-            <BiHome src={home} alt="home icon" />
+            <div>
+              <BiHome src={home} alt="home icon" />
+            </div>
           </LightTooltip>
         </Link>
         <Link to="/">
           <LightTooltip title="Sair">
-            <BiLogOut onClick={logOut} />
+            <div>
+              <BiLogOut onClick={logOut} />
+            </div>
           </LightTooltip>
         </Link>
       </div>
