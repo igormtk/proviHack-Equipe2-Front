@@ -8,11 +8,18 @@ export const CustomToast = (missing_fields) => {
           <p>Por favor preencha os campos:</p>
           <ul>
             {missing_fields.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} style={{ marginBottom: "8px" }}>
+                {item}
+              </li>
             ))}
           </ul>
         </div>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
           <button
             style={{
               backgroundColor: "#7B61FF",
@@ -29,6 +36,12 @@ export const CustomToast = (missing_fields) => {
         </div>
       </div>
     ),
-    { duration: 20000 }
+    {
+      duration: 20000,
+      style: {
+        maxWidth: "500px",
+        padding: "30px",
+      },
+    }
   );
 };

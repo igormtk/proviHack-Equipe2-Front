@@ -15,6 +15,7 @@ import { missingFieldsFunction } from "../../Helpers/HelperFunctions";
 import { useResiduesContext } from "../../Contexts/residuesContext";
 import Footer from "../../Components/Footer";
 import SecondaryButton from "../../Components/SecondaryButton";
+import { ViaCep } from "../../Services";
 
 const RequestCollection = () => {
   const [locationModal, setLocationModal] = useState(false);
@@ -54,13 +55,37 @@ const RequestCollection = () => {
     if (!!missing_fields[0]) {
       CustomToast(missing_fields);
     } else {
-      // fazer a requisição
-      toast.success("Solicitação feita com sucesso!");
-
       let { date, type, quantity, ...address } = info;
       let data = { date, type, quantity, address };
 
       registerResidues(data);
+    }
+  };
+
+  const handleCep = (e) => {
+    setInfo({ ...info, cep: e.target.value });
+    let validCep = e.target.value;
+    console.log(validCep);
+
+    if (validCep.length >= 8) {
+      validCep = validCep.replace("-", "");
+
+      if (validCep.length === 8) {
+        ViaCep.get(`/${validCep}/json/`)
+          .then((res) => {
+            console.log(res.data);
+            setInfo({
+              ...info,
+              cep: res.data["cep"],
+              state: res.data["uf"],
+              city: res.data["localidade"],
+              district: res.data["bairro"],
+              street: res.data["logradouro"],
+              complement: res.data["complemento"],
+            });
+          })
+          .catch((e) => console.log(e));
+      }
     }
   };
 
@@ -128,17 +153,14 @@ const RequestCollection = () => {
         </div>
         <div>
           <QuestionBox>
-            <h2>3 - Quantidade de Sacas</h2>
+            <h2>3 - Quantidade de Sacos Pláticos</h2>
             <div className="cards__box box3">
               <input
                 className="input_quantity"
                 value={info.quantity}
                 onChange={(e) => setInfo({ ...info, quantity: e.target.value })}
               />
-              <SecondaryButton
-                children="Enviar"
-                onClick={handleForm}
-              />
+              <SecondaryButton children="Enviar" onClick={handleForm} />
             </div>
           </QuestionBox>
         </div>
@@ -155,7 +177,8 @@ const RequestCollection = () => {
               fullWidth
               label="cep"
               name="cep"
-              onChange={(e) => setInfo({ ...info, cep: e.target.value })}
+              // onChange={(e) => setInfo({ ...info, cep: e.target.value })}
+              onChange={(e) => handleCep(e)}
               placeholder="CEP*"
               value={info.cep}
               variant="outlined"
@@ -233,7 +256,7 @@ const RequestCollection = () => {
         </BaseModal>
       )}
       <Toaster />
-      <Footer/>
+      <Footer />
     </Container>
   );
 };
