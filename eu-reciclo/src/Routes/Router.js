@@ -23,6 +23,12 @@ const RouterComponent = () => {
 
       <Route path="/home/user" element={<UserHomePage />} />
 
+       <Route path="/map" element={<MapLeaflet />} />
+          
+       <Route path="/user/request" element={<RequestCollection/>}/>
+                  
+       <Route path="/user/searchAssociations" element={<SearchAssociations/>}/>
+
       <Route path="/login/receiver" element={<ReceiverLoginPage />} />
 
       <Route path="/signup/receiver" element={<ReceiverSignUpPage />} />
@@ -30,10 +36,6 @@ const RouterComponent = () => {
       <Route path="/home/receiver" element={<ReceiverHomePage />} />
 
       <Route path="/map" element={<MapLeaflet />} />
-
-      <Route path="/user/request" element={<RequestCollection />} />
-
-      <Route path="/user/searchAssociations" element={<SearchAssociations />} />
 
       <Route path="*" element={<ErrorPage />} />
     </Routes>
