@@ -84,6 +84,8 @@ export const CssTextField = styledMui(TextField)({
     borderBottomColor: "green",
   },
   "& .MuiOutlinedInput-root": {
+    marginBottom: "8px",
+
     "&.Mui-focused fieldset": {
       borderColor: "green",
     },
