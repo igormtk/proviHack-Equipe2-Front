@@ -8,36 +8,35 @@ export const CardContainer = styled.div`
 `;
 
 export const InformationContainer = styled.div`
-
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
     padding: 10px;
-    margin: 20px;
+    margin-top: 40px;
+    width: 100%;
 `
 
 export const MapContainer = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px solid black;
+    border: 1px solid #E5E8E8;
     border-radius: 10px;
-    width: 30%;
-    padding: 70px;
-    margin-top: 30px;
+    width: 20%;
+    padding: 20px;
     box-shadow: -20px 13px 10px rgba(29, 140, 231, 0.45);
+    margin-left: 40px;
 `
 
 export const ChartContainer = styled.div`
-    border: 1px solid black;
+    border: 1px solid #E5E8E8;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     padding: 20px;
-    margin: 20px;
     align-items: center;
-    width: 60%;
-    height: 100%;
+    width: 40%;
     box-shadow: -20px 13px 10px rgba(29, 140, 231, 0.45);
 `
 
@@ -55,22 +54,20 @@ export const ButtonContainer2 = styled.div`
     width: 100%;
 `
 
-export const Title = styled.div`
+export const Title = styled.h2`
+    color: green;
     display: flex;
     justify-content: center;
     font-size: 50px;
     margin: 20px;
+    margin-top: 50px;
 `
 
-  border: 1px solid black;
-`;
-
-export const MapContainer = styled.div`
-  border: 1px solid black;
-`;
-
-export const ChartContainer = styled.div`
-  border: 1px solid black;
-  /* width: ; */
-`;
+export const Title2 = styled.h2`
+    color: gray;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin: 20px;
+`
 

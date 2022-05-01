@@ -8,7 +8,7 @@ import glass from "../../Assets/Icons/glass.png"
 import paper from "../../Assets/Icons/paper.png"
 import { Chart } from "react-google-charts";
 import MapLeaflet from "../../Components/Map/Map";
-import { CardContainer, Title, InformationContainer, ChartContainer, MapContainer, ButtonContainer, ButtonContainer2 } from "./UserHomePageStyle"
+import { CardContainer, Title, Title2, InformationContainer, ChartContainer, MapContainer, ButtonContainer, ButtonContainer2 } from "./UserHomePageStyle"
 import UserChart from "../../Components/Chart/Chart"
 import { Button } from "@mui/material"
 
@@ -20,6 +20,7 @@ const UserHomePage = () => {
         <Header/>
         
         <Title>Porque é importante reciclar?</Title>
+        <Title2>Clique abaixo e saiba mais</Title2>
 
             <CardContainer>
                 
@@ -62,8 +63,6 @@ const UserHomePage = () => {
                 </ChartContainer>
 
                 <MapContainer>
-
-                    <h2>CONFIRA OS POSTOS DE COLETA!</h2>
 
                     {MapLeaflet()}
 

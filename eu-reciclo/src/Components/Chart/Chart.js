@@ -12,20 +12,16 @@ export const data = [
   [4, 0],
   [5, 5],
   [6, 2],
-  [7, 10],
-  [8, 1],
-  [9, 0],
-  [10, 3],
-  [11, 4],
-  [12, 8],
-  [13, 2],
-  [14, 5],
+  [7, 5],
+  [8, 5],
+  [9, 2],
+  [10, 5]
 ];
 
 export const options = {
   chart: {
     title: "Quantidade de sacos recolhidos por dia",
-    subtitle: "em unidade",
+    subtitle: "nos últimos 10 dias",
   },
 };
 
