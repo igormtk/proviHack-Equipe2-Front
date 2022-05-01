@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://eu-reciclo.herokuapp.com',
+  baseURL: "https://eu-reciclo.herokuapp.com",
 });
 
 export default api;
@@ -14,3 +14,7 @@ export const fetchLocalMapBox = (local) =>
   )
     .then((response) => response.json())
     .then((data) => data);
+
+export const ViaCep = axios.create({
+  baseURL: "http://viacep.com.br/ws",
+});

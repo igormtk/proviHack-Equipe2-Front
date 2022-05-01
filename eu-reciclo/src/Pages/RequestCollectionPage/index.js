@@ -15,7 +15,7 @@ import { missingFieldsFunction } from "../../Helpers/HelperFunctions";
 import { useResiduesContext } from "../../Contexts/residuesContext";
 import Footer from "../../Components/Footer";
 import SecondaryButton from "../../Components/SecondaryButton";
-import axios from "axios";
+import { ViaCep } from "../../Services";
 
 const RequestCollection = () => {
   const [locationModal, setLocationModal] = useState(false);
@@ -71,8 +71,7 @@ const RequestCollection = () => {
       validCep = validCep.replace("-", "");
 
       if (validCep.length === 8) {
-        axios
-          .get(`http://viacep.com.br/ws/${validCep}/json/`)
+        ViaCep.get(`/${validCep}/json/`)
           .then((res) => {
             console.log(res.data);
             setInfo({
