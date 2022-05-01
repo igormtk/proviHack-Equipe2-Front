@@ -1,11 +1,11 @@
 import React from "react";
-import useForm from "../../Hooks/useForm";
+import useFormHook from "../../Hooks/useFormHook";
 import InputField from "../../Components/Input";
 import PrimaryButton from "../../Components/PrimaryButton";
 import { UseLogin } from "../../Contexts/loginContext";
 
 const UserLoginForm = () => {
-  const { form, handleInputOnChange } = useForm({ email: "", password: "" });
+  const { form, handleInputOnChange } = useFormHook({ email: "", password: "" });
 
   const { logIn } = UseLogin();
 
