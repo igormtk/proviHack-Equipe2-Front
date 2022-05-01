@@ -52,7 +52,6 @@ function MapForm() {
   };
 
   const handleChangeSelect = (event) => {
-    console.log('changed', event);
     setPosition({
       longitude: event.coords[0],
       latitude: event.coords[1],

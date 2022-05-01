@@ -7,17 +7,16 @@ import game from "../../Assets/Icons/game.png";
 import glass from "../../Assets/Icons/glass.png";
 import paper from "../../Assets/Icons/paper.png";
 import { Chart } from "react-google-charts";
-import MapLeaflet from "../../Components/Map/Map";
 import {
   CardContainer,
   Title,
   Title2,
   InformationContainer,
   ChartContainer,
-  MapContainer,
-  ButtonContainer,
+  VideoContainer,
   Container,
   ContentContainer,
+  ButtonContainer,
 } from "./UserHomePageStyle";
 import UserChart from "../../Components/Chart/Chart";
 import Footer from "../../Components/Footer";
@@ -67,11 +66,8 @@ const UserHomePage = () => {
         </CardContainer>
 
         <InformationContainer>
-          <ChartContainer>{UserChart()}</ChartContainer>
-
-          <MapContainer>
-            {MapLeaflet()}
-
+          <ChartContainer>
+            <div id="chart">{UserChart()}</div>
             <ButtonContainer>
               <SecondaryButton
                 fullWidth
@@ -92,7 +88,19 @@ const UserHomePage = () => {
                 Buscar Associação
               </SecondaryButton>
             </ButtonContainer>
-          </MapContainer>
+          </ChartContainer>
+
+          <VideoContainer>
+            <iframe
+              width="fit-content"
+              height="250px"
+              src="https://www.youtube.com/embed/XVYqqv6kUow"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </VideoContainer>
         </InformationContainer>
       </ContentContainer>
       <Footer />
