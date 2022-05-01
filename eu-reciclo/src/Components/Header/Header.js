@@ -3,7 +3,7 @@ import { HeaderContainer, Icon, LightTooltip, Logo } from "./HeaderStyle";
 import logo from "../../Assets/Icons/logo.png";
 import home from "../../Assets/Icons/home_header.png";
 import { Link } from "react-router-dom";
-import { BiLogOut } from "react-icons/bi";
+import { BiLogOut, BiHome } from "react-icons/bi";
 import { UseLogin } from "../../Contexts/loginContext";
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
       <div>
         <Link to="/home/user">
           <LightTooltip title="Ir para a home">
-            <Icon src={home} alt="home icon" />
+            <BiHome src={home} alt="home icon" />
           </LightTooltip>
         </Link>
         <Link to="/">

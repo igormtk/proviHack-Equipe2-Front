@@ -2,6 +2,7 @@ import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../Services";
 import { UseLogin } from "./loginContext";
+import { toast } from "react-hot-toast";
 
 export const UserContext = createContext();
 
@@ -13,7 +14,7 @@ export const UserProvider = ({ children }) => {
     api
       .post("/user/register", data)
       .then((res) => navigate("/"))
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("Email já cadastrado!"));
   }
 
   function retrieveUsers() {
