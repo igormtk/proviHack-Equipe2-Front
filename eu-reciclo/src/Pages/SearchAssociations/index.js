@@ -1,39 +1,32 @@
 import React from "react";
-import {
-  BlueStyledButton,
-  ButtonBox,
-  Container,
-  PageContainer,
-  StyledButton,
-  MapContainer
-} from "./style";
+import { ButtonBox, Container, PageContainer, MapContainer } from "./style";
 import { useNavigate } from "react-router-dom";
-import MapLeaflet from "../../Components/Map/Map";
-import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer";
+import Header from "../../Components/Header/Header";
+import MapLeaflet from "../../Components/Map/Map";
+import SecondaryButton from "../../Components/SecondaryButton";
 
 const SearchAssociations = () => {
   const navigate = useNavigate();
 
   return (
     <PageContainer>
-      <Header/>
+      <Header />
       <Container>
         <ButtonBox>
-          <StyledButton onClick={() => navigate("/user/request")}>
+          <SecondaryButton onClick={() => navigate("/user/request")}>
             Solicitar Coleta
-          </StyledButton>
-          <BlueStyledButton
+          </SecondaryButton>
+          <SecondaryButton
+            green={false}
             onClick={() => console.log("buscar associações aqui")}
           >
             Buscar Associações
-          </BlueStyledButton>
+          </SecondaryButton>
         </ButtonBox>
-        <MapContainer>
-          {MapLeaflet()}
-        </MapContainer>
+        <MapContainer>{MapLeaflet()}</MapContainer>
       </Container>
-      <Footer/>
+      <Footer />
     </PageContainer>
   );
 };
