@@ -1,5 +1,5 @@
 import React from "react"
-import { Card, CardIcon } from "./MaterialCardsStyle";
+import { Card, CardIcon, CardTitle } from "./MaterialCardsStyle";
 
 const MaterialCard = (props) => {
 
