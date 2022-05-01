@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-
+import { useUserContext } from "../../Contexts/userContext";
 const UserSignUpForm = () => {
   const { form, handleInputOnChange } = useForm({
     name: "",
@@ -17,11 +17,13 @@ const UserSignUpForm = () => {
     confirmPassword: "",
   });
 
-  const navigate = useNavigate();
+  const { registerUser } = useUserContext();
 
   const onSubmitLogin = (event) => {
     event.preventDefault();
-    //LoginUser(form, navigate); colocar a função de logar aqui, esperando API
+    delete form.confirmPassword;
+    console.log(form);
+    registerUser(form);
   };
 
   return (
@@ -58,7 +60,7 @@ const UserSignUpForm = () => {
           value={form.phone}
           onChange={handleInputOnChange}
           label={"Celular"}
-          placeholder={"(DDD) XXXX-XXXX"}
+          placeholder={" DDD XXXX XXXX"}
           type={"text"}
           variant={"outlined"}
           fullWidth
