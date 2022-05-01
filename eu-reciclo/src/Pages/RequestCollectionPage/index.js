@@ -55,7 +55,9 @@ const RequestCollection = () => {
       CustomToast(missing_fields);
     } else {
       // fazer a requisição
-      toast.success("Solicitação feita com sucesso!");
+      toast.success(
+        "Solicitação feita com sucesso! Em breve entraremos em contato"
+      );
 
       let { date, type, quantity, ...address } = info;
       let data = { date, type, quantity, address };
@@ -128,17 +130,14 @@ const RequestCollection = () => {
         </div>
         <div>
           <QuestionBox>
-            <h2>3 - Quantidade de Sacas</h2>
+            <h2>3 - Quantidade de Sacos Pláticos</h2>
             <div className="cards__box box3">
               <input
                 className="input_quantity"
                 value={info.quantity}
                 onChange={(e) => setInfo({ ...info, quantity: e.target.value })}
               />
-              <SecondaryButton
-                children="Enviar"
-                onClick={handleForm}
-              />
+              <SecondaryButton children="Enviar" onClick={handleForm} />
             </div>
           </QuestionBox>
         </div>
@@ -233,7 +232,7 @@ const RequestCollection = () => {
         </BaseModal>
       )}
       <Toaster />
-      <Footer/>
+      <Footer />
     </Container>
   );
 };
