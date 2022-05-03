@@ -56,7 +56,7 @@ $ npm run start
 
 ```
 
-## Repositío Backend
+## Repositório Backend
 [repositório backend utilizado](https://github.com/WillianSantosC/provihack-equipe2-back)
 
 ---------------------------------------------------
